@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Hero } from '../hero'
 //import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
@@ -8,12 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
 
-  Tabs = {
-    Tabs1: "myTab1",
-    Tabs2: "myTab2"
-  }
-
-  heroes = ["AlphaMan", "SuperTrooper"];
+  
+  heros: Hero[] = 
+    [{
+    id: 2,
+    name: 'Windstorm'
+    },
+    {
+      id:3,
+      name: 'dingus'
+    }];
 
   constructor() { }
 
