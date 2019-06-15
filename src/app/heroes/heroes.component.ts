@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero'
-//import { MatTabsModule } from '@angular/material/tabs';
+import { Hero } from '../hero';
+import { MatTabsModule } from '@angular/material/tabs';
+import { myMockHeroes } from '../mock-heroes';
 
 @Component({
   selector: 'app-heroes',
@@ -9,15 +10,16 @@ import { Hero } from '../hero'
 })
 export class HeroesComponent implements OnInit {
 
-  
-  heros: Hero[] = 
+  heroes: Hero[] = myMockHeroes;
+
+  villains: Hero[] = 
     [{
     id: 2,
-    name: 'Windstorm'
+    name: 'Disaster Master'
     },
     {
       id:3,
-      name: 'dingus'
+      name: 'Dingus'
     }];
 
   constructor() { }

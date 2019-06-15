@@ -1,0 +1,28 @@
+.hero-listing-outer{
+    width: 230px;
+    margin: auto;
+    border-color:lightblue;
+    border-style:dotted;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.hero-listing-inner{
+    text-align: left;
+    /* height: 55px; */
+    margin: 10px 10px 10px 10px;
+}
+
+.villain-listing-outer{
+    width: 230px;
+    margin: auto;
+    border-color:red;
+    border-style:dotted;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.villain-listing-inner{
+    text-align: left;
+    margin: 10px 10px 10px 10px;
+}

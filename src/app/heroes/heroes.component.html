@@ -42,10 +42,36 @@
 </div>
 -->
 
-<h3>Hero Descriptions</h3>
-
-<div *ngFor='let hero of heros; let i = index'>
-  <span><b>Index: </b>{{i+1}}</span><br>
-  <span><b>Name:</b><span><input [(ngModel)]="heros[i].name" placeholder="name"></span></span><br>
-  <span><b>HeroId#: </b>{{hero.id}}</span><br><br>
+<!-- **** My Special Hero View ****
+<div class=hero-listing-outer *ngFor='let hero of villains; let i = index'>
+  <div class=hero-listing-inner>
+    <span><b>Index: </b>{{i+1}}</span><br>
+    <span><b>Name:</b><span><input [(ngModel)]="villains[i].name" placeholder="name"></span></span><br>
+    <span><b>Hero Id#: </b>{{hero.id}}</span><br><br>
+  </div>
 </div>
+-->
+
+<mat-tab-group>
+
+  <mat-tab label="Heroes">
+    <div class=hero-listing-outer *ngFor='let hero of heroes; let i = index'>
+      <div class=hero-listing-inner >
+        <span><b>Index: </b>{{i+1}}</span><br>
+        <span><b>Name:</b><input [(ngModel)]='hero.name' placeholder='null'></span><br>
+        <span><b>Hero Id#: </b>{{hero.id}}</span><br>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label='Villains'>
+    <div class=villain-listing-outer *ngFor='let villain of villains; let i = index'>
+        <div class=villain-listing-inner>
+          <span><b>Index: </b>{{i+1}}</span><br>
+          <span><b>Name:</b><span><input [(ngModel)]="villains[i].name" placeholder="name"></span></span><br>
+          <span><b>Hero Id#: </b>{{villain.id}}</span><br>
+        </div>
+      </div>
+  </mat-tab>
+  
+</mat-tab-group>
