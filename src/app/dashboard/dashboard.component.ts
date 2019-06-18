@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
 
   getHeroes(): void{
     this.heroService.getHeroes()
-    .subscribe(myVar => this.heroes = myVar);
+    .subscribe(myVar => this.heroes = myVar.slice(0,4));
   }
 
 }
