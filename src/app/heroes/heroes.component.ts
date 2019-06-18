@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { MatTabsModule } from '@angular/material/tabs';
-import { myMockHeroes } from '../mock-heroes';
+import { HeroService } from '../hero.service';
+import { Z_BEST_COMPRESSION } from 'zlib';
 
 @Component({
   selector: 'app-heroes',
@@ -10,7 +11,7 @@ import { myMockHeroes } from '../mock-heroes';
 })
 export class HeroesComponent implements OnInit {
 
-  heroes: Hero[] = myMockHeroes;
+  heroes: Hero[];
 
   selectedHero: Hero;
 
@@ -24,13 +25,20 @@ export class HeroesComponent implements OnInit {
       name: 'Dingus'
     }];
 
-  constructor() { }
+  constructor(
+    private heroServiceInjectee: HeroService,
+  ) { }
 
   ngOnInit() {
+    this.getHeroes();
   }
 
   onSelect(hero:Hero){
     this.selectedHero=hero;
+  }
+
+  getHeroes(): void {
+    this.heroServiceInjectee.getHeroes().subscribe(ThisVariableIsUnrelatedToAnything => this.heroes = ThisVariableIsUnrelatedToAnything);
   }
 
 }
