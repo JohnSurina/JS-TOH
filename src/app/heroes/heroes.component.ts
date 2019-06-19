@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { MatTabsModule } from '@angular/material/tabs';
 import { HeroService } from '../hero.service';
-import { Z_BEST_COMPRESSION } from 'zlib';
 
 @Component({
   selector: 'app-heroes',
