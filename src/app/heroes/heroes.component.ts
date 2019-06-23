@@ -32,9 +32,11 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
+  /* removed when link to heroDetailComponent was changed from a toggled tag in html to a link
   onSelect(hero:Hero){
     this.selectedHero=hero;
   }
+  */
 
   getHeroes(): void {
     this.heroServiceInjectee.getHeroes().subscribe(ThisVariableIsUnrelatedToAnything => this.heroes = ThisVariableIsUnrelatedToAnything);
