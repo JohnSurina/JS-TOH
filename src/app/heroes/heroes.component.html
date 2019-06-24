@@ -87,3 +87,8 @@
     </a>
   </li>
 </ul>
+
+<div>
+  <label>New Hero Name: <input #heroName ></label>
+  <button (click)='add(heroName.value); heroName.value=null;'>Add Hero</button>
+</div>

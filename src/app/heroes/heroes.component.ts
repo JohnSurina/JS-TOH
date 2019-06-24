@@ -42,4 +42,7 @@ export class HeroesComponent implements OnInit {
     this.heroServiceInjectee.getHeroes().subscribe(ThisVariableIsUnrelatedToAnything => this.heroes = ThisVariableIsUnrelatedToAnything);
   }
 
+  add(heroName:string){
+  }
+
 }
