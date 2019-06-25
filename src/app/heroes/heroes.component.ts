@@ -43,6 +43,10 @@ export class HeroesComponent implements OnInit {
   }
 
   add(heroName:string){
+    heroName = heroName.trim();
+    if (!heroName) return;
+    this.heroServiceInjectee.addHero({heroName} as Hero)
+    .subscribe(myNewHero => {this.heroes.push(myNewHero)});
   }
 
 }
