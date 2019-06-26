@@ -79,4 +79,10 @@ updateHero(hero:Hero):Observable<any /* try to put Hero here and see what happen
   );
 }
 
+addHero(hero:Hero):Observable<Hero>{
+  return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
+    tap((newHero:Hero) => this.log(`added hero w/ id=${newHero.id}`))
+  );
+}
+
 }
