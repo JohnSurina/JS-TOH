@@ -50,7 +50,8 @@ export class HeroesComponent implements OnInit {
   }
 
   delete(existingHero:Hero):void{
-    this.heroes.filter(!existingHero)
+    this.heroes = this.heroes.filter(heroElement => existingHero != heroElement);
+    this.heroServiceInjectee.deleteHero(existingHero).subscribe();
   }
 
 }
