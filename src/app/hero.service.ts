@@ -95,10 +95,12 @@ deleteHero(existingHero:Hero|number):Observable<Hero>{
 }
 
 searchHeroes(term: string): Observable<Hero[]>{
-if(!term.trim()){
-  return of([]);
-}
-return this.http.get<Hero[]>()
+  if(!term.trim()){
+    return of([]);
+    }
+  return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`)  // the forward-slash+?  is a query string, don't forget that.
+  .pipe(tap(_ => this.log(`found heroes matching "${term}"`)),
+  catchError(this.handleError<Hero[]>('searchHeroes', [])));
 }
 
 }
